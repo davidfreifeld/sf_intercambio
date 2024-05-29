@@ -1,6 +1,7 @@
 import pandas as pd
 from datetime import datetime
 from simple_salesforce import Salesforce
+import streamlit as st
 
 class Campaign:
     
@@ -21,7 +22,7 @@ class Query:
         self.sf = Salesforce(
             username=username,
             password=password,
-            security_token='***REMOVED***',
+            security_token=st.secrets['security_token'],
             domain='login'
         )
 
